@@ -92,7 +92,7 @@ get_mtg_config() {
     
     if [ "$service_type" = "faketls" ]; then
         read -p "请输入用于伪装的域名 (默认 azure.microsoft.com): " FAKE_TLS_DOMAIN
-        if [ -z "$FAKE_TLS_DOMAIN" ]; then FAKE_TLS_DOMAIN="azure.microsoft.com"; fi
+        if [ -z "$FAKE_TLS_DOMAIN" ]; then FAKE_TLS_DOMAIN="icloud.com"; fi
         SECRET=$("$BIN_PATH" generate-secret --hex "$FAKE_TLS_DOMAIN")
     else
         SECRET=$("$BIN_PATH" generate-secret "secured")
